@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="user" type="com.example.aaron.databindingexample.data.User"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mn_username"
+            android:padding="16dp"
+            tools:text="Name"
+            android:text="@{user.name}"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/mn_username"
+        android:id="@+id/mn_txtAge"
+        android:padding="16dp"
+        android:text="@{Integer.toString(user.age)}"
+        tools:text="XX"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>
